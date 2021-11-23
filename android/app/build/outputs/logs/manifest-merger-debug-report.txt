@@ -1,10 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-62:12
-INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-62:12
-INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-62:12
-INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-62:12
-MERGED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-62:12
+ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-63:12
+INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-63:12
+INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-63:12
+INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-63:12
+MERGED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-63:12
+MERGED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-12:12
 MERGED from [:android_alarm_manager_plus] C:\WorkSpace\blind_alarm\build\android_alarm_manager_plus\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:permission_handler] C:\WorkSpace\blind_alarm\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:android_alarm_manager] C:\WorkSpace\blind_alarm\build\android_alarm_manager\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -19,14 +20,14 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\±Ë¡
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\42415d22b488b741b7e8fbc712464c00\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.6.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\d6c2e54771524a931cd2bdacc9b51b98\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\7bc9dee95bdd13d8392abaa54d3ac4c0\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\eac4820eab11ef9b13679619b341596e\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\3a89b53f4c0e1215dbfe28e33e508887\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\fb333fb43575d8a3b51161295454427f\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\33789d9b6acde6ce9172eed59546467e\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\3a89b53f4c0e1215dbfe28e33e508887\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\28c8bed6fae67e41db98432923c9a958\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\b962778313a0e23f9ca3dbafc012c1af\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -40,11 +41,11 @@ INJECTED from C:\WorkSpace\blind_alarm\android\app\src\debug\AndroidManifest.xml
 		INJECTED from C:\WorkSpace\blind_alarm\android\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-62:12
+		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-63:12
 		INJECTED from C:\WorkSpace\blind_alarm\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-62:12
+		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:1-63:12
 		INJECTED from C:\WorkSpace\blind_alarm\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:1:11-69
@@ -139,13 +140,27 @@ ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:59:
 	android:name
 		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:59:22-65
 uses-permission#android.permission.SCHEDULE_EXACT_ALARM
-ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:61:5-78
+ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:60:5-78
+	android:name
+		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:60:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:61:5-79
+MERGED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-79
+MERGED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-79
 	android:name
 		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:61:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:62:5-81
+MERGED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-81
+MERGED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml:62:22-78
 uses-sdk
 INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\WorkSpace\blind_alarm\android\app\src\main\AndroidManifest.xml
+MERGED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:android_alarm_manager_plus] C:\WorkSpace\blind_alarm\build\android_alarm_manager_plus\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:android_alarm_manager_plus] C:\WorkSpace\blind_alarm\build\android_alarm_manager_plus\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:permission_handler] C:\WorkSpace\blind_alarm\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -174,22 +189,22 @@ MERGED from [androidx.customview:customview:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\cache
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.6.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.6.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\5f663b08eec19eef9a9d1af662d9025e\core-1.6.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\d6c2e54771524a931cd2bdacc9b51b98\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\d6c2e54771524a931cd2bdacc9b51b98\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\7bc9dee95bdd13d8392abaa54d3ac4c0\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\7bc9dee95bdd13d8392abaa54d3ac4c0\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\eac4820eab11ef9b13679619b341596e\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\eac4820eab11ef9b13679619b341596e\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\3a89b53f4c0e1215dbfe28e33e508887\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\3a89b53f4c0e1215dbfe28e33e508887\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\fb333fb43575d8a3b51161295454427f\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\fb333fb43575d8a3b51161295454427f\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\33789d9b6acde6ce9172eed59546467e\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\33789d9b6acde6ce9172eed59546467e\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\c39070be4a8b092ae5970162a829e305\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\3a89b53f4c0e1215dbfe28e33e508887\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\3a89b53f4c0e1215dbfe28e33e508887\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\28c8bed6fae67e41db98432923c9a958\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\28c8bed6fae67e41db98432923c9a958\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\±Ë¡ÿªÛ\.gradle\caches\transforms-2\files-2.1\1fdddb698f5b73fbeb212822ee0a08f1\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -210,3 +225,11 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\WorkSpace\blind_alarm\android\app\src\debug\AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from C:\WorkSpace\blind_alarm\android\app\src\debug\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.BLUETOOTH
+ADDED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-68
+	android:name
+		ADDED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-74
+	android:name
+		ADDED from [:flutter_bluetooth_serial] C:\WorkSpace\blind_alarm\build\flutter_bluetooth_serial\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-71

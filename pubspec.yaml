@@ -37,6 +37,7 @@ dependencies:
   android_alarm_manager_plus: ^2.0.3
   android_alarm_manager: ^2.0.2
   permission_handler: ^8.3.0
+  flutter_bluetooth_serial: ^0.4.0
 
 dev_dependencies:
   flutter_test:
