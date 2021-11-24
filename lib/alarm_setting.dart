@@ -2,14 +2,28 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+import './serial_manager.dart';
+
 class AlarmSetting extends StatelessWidget {
+  Map<String, dynamic> btConn = {
+    "conn": null,
+    "name": null,
+    "address": "",
+  };
   var AlarmData = AlarmDataDTO();
 
-  final TextEditingController _yearControl = TextEditingController();
-  final TextEditingController _monthControl = TextEditingController();
-  final TextEditingController _dateControl = TextEditingController();
-  final TextEditingController _hourControl = TextEditingController();
-  final TextEditingController _minuteControl = TextEditingController();
+  final TextEditingController _yearControl =
+      TextEditingController(text: DateTime.now().year.toString());
+  final TextEditingController _monthControl =
+      TextEditingController(text: DateTime.now().month.toString());
+  final TextEditingController _dateControl =
+      TextEditingController(text: DateTime.now().day.toString());
+  final TextEditingController _hourControl =
+      TextEditingController(text: DateTime.now().hour.toString());
+  final TextEditingController _minuteControl =
+      TextEditingController(text: DateTime.now().minute.toString());
+
+  AlarmSetting({Key? key}) : super(key: key);
 
   String textValidator(String text) {
     if (text != '') {
@@ -25,11 +39,13 @@ class AlarmSetting extends StatelessWidget {
     int dateData = int.parse(textValidator(_dateControl.text));
     int hourData = int.parse(textValidator(_hourControl.text));
     int minuteData = int.parse(textValidator(_minuteControl.text));
-    bool result =
+    Map<String, dynamic> res =
         AlarmData.setTime(yearData, monthData, dateData, hourData, minuteData);
-    if (result) {
-      AlarmData.getTime(); //DEBUG
+    if (res["result"] == true) {
+      // 아두이노로 데이터 보내기 //
+      BLEcontrol.btSendData(btConn["conn"], AlarmData.getTimeWithHC06());
       Navigator.pop(context, AlarmData.getTime());
+      ////////////////////////////
     } else {
       log("시간 잘못 설정됨");
       showDialog(
@@ -37,8 +53,7 @@ class AlarmSetting extends StatelessWidget {
           builder: (BuildContext context) {
             return AlertDialog(
               title: const Text("알람 설정 오류"),
-              content: const Text(
-                  "시간이 잘못 설정되었습니다. 다시 설정해주십시오.\n (현재시각보다 2분뒤에 설정해주시기 바랍니다.)"),
+              content: Text(res["msg"]),
               actions: <Widget>[
                 TextButton(
                   child: const Text('cancel'),
@@ -54,6 +69,10 @@ class AlarmSetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
+    btConn["conn"] = args["conn"];
+    btConn["name"] = args["name"];
+    btConn["address"] = args["address"];
     return Scaffold(
         appBar: AppBar(
           title: const Text("알람 설정"),
@@ -125,26 +144,55 @@ class AlarmDataDTO {
     return int.parse(data.difference(now).inMinutes.toString());
   }
 
-  bool setTime(int y, int m, int d, int h, int min) {
-    //현재시각 보다 더 이후에 알람시간이 맞춰져야함
+  //시간을 제대로 입력했는지 검사
+  Map<String, dynamic> checkTime(int y, int m, int d, int h, int min) {
+    Map<String, dynamic> returnData = {
+      "result": true,
+      "msg": "알람 설정!",
+    };
     DateTime dataTmp = DateTime(y, m, d, h, min);
     int res = timeCompare(DateTime.now(), dataTmp);
-    log(res.toString());
-    if (res > 0) {
+
+    if (!(1 <= m && m <= 12)) {
+      returnData["result"] = false;
+      returnData["msg"] = "오류!\n1월~12월 사이로 입력해주세요.";
+    } else if (!(1 <= d && d <= 31)) {
+      returnData["result"] = false;
+      returnData["msg"] = "오류!\n1일~31일 사이로 입력해주세요.";
+    } else if (!(0 <= h && h <= 23)) {
+      returnData["result"] = false;
+      returnData["msg"] = "오류!\n0시~23시 사이로 입력해주세요.";
+    } else if (!(0 <= min && min <= 59)) {
+      returnData["result"] = false;
+      returnData["msg"] = "오류!\n0분~59분 사이로 입력해주세요.";
+    } else if (res <= 0) {
+      returnData["result"] = false;
+      returnData["msg"] = "오류!\n현재시간보다 2분뒤에 설정해주세요.";
+    }
+    return returnData;
+  }
+
+  Map<String, dynamic> setTime(int y, int m, int d, int h, int min) {
+    //알람 입력 제대로 됐는지 검사
+    Map<String, dynamic> res = checkTime(y, m, d, h, min);
+    if (res["result"] == true) {
       year = y;
       month = m;
       date = d;
       hour = h;
       minute = min;
-      return true;
-    } else {
-      return false;
     }
+    return res;
   }
 
   String getTime() {
-    String returnData = "$year년 $month월 $date일, $hour시 $minute분";
-    log(returnData + "알람설정");
-    return returnData;
+    String returnStr = "$year/$month/$date, $hour:$minute";
+    log(returnStr + "알람설정");
+    return returnStr;
+  }
+
+  String getTimeWithHC06() {
+    String returnStr = "$year,$month,$date,$hour,$minute";
+    return returnStr;
   }
 }
