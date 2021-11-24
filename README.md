@@ -9,7 +9,7 @@
 > (arduino) 1. 아두이노에서 받은 String timeData에 맞추어 DateTime 변수 만들기<br>
 > (arduino) 2. 정해진 시간에 맞추어 소형DC모터 돌아가게<br>
 > (arduino) 1,2번 합쳐서 정해진 시간을 timeData로 변경 후 알람 설정 후 프로젝트 최종 마무리 하기<br>
-> 각 페이지 디자인 조금 손보기<br>
+> (flutter) 각 페이지 디자인 조금 손보기<br>
 > (option) 휴대폰에도 알람이 뜰 수 있도록 하기<br>
 
 <br>
