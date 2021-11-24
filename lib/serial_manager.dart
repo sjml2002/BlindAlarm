@@ -9,6 +9,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
+// ignore: library_prefixes
+import './library.dart' as CtLib;
 
 class SerialManagerMain extends StatefulWidget {
   const SerialManagerMain({Key? key}) : super(key: key);
@@ -38,7 +40,7 @@ class SerialManager extends State<SerialManagerMain> {
     if (!status.isGranted) {
       //권한 허용이 안된 경우
       String cont = "권한 설정을 다시 확인해주세요";
-      ctAlert(navigatorKey.currentState!.overlay!.context, cont);
+      CtLib.ctAlert(navigatorKey.currentState!.overlay!.context, cont);
       return false;
     } else {
       //권한 허용됨
@@ -52,7 +54,7 @@ class SerialManager extends State<SerialManagerMain> {
     log("블루투스 장치 검색 중"); //DEBUG
     var streamSubscription =
         FlutterBluetoothSerial.instance.startDiscovery().listen((r) {
-      if (!isListInItem(devicesAddress, r.device.address.characters)) {
+      if (!CtLib.isListInItem(devicesAddress, r.device.address.characters)) {
         setState(() {
           results.add(r);
           devicesName.add(r.device.name);
@@ -63,29 +65,31 @@ class SerialManager extends State<SerialManagerMain> {
     log("devices: ${devicesAddress.toString()}"); //DEBUG
     log("results: ${results.toString()}");
     streamSubscription.onDone(() {
-      FlutterBluetoothSerial.instance.cancelDiscovery();
+      //FlutterBluetoothSerial.instance.cancelDiscovery();
     });
   }
 
   ///// 검색된 장치 중 하나 연결 /////
-  Future<bool> connect(String address) async {
+  Future<void> btConnect(
+      Map<String, String> deviceInfo, BuildContext context) async {
+    Map<String, dynamic> btInfo = {
+      "conn": null,
+      "deviceName": "",
+      "deviceAddress": "",
+    };
     try {
-      var conn = await BluetoothConnection.toAddress(address);
+      var conn = await BluetoothConnection.toAddress(deviceInfo["address"]);
       conn.input!.listen((Uint8List data) {
         log(ascii.decode(data));
       });
-
-      return true;
+      btInfo["conn"] = conn;
+      btInfo["deviceName"] = deviceInfo["name"];
+      btInfo["deviceAddress"] = deviceInfo["address"];
+      Navigator.pop(context, btInfo);
     } catch (e) {
+      CtLib.ctAlert(context, "연결할 수 없음!\n예외발생");
       log('연결할 수 없음 예외 발생');
-      return false;
     }
-  }
-
-  ///// 연결된 장치로 데이터 전달 /////
-  Future send(BluetoothConnection conn, Uint8List data) async {
-    conn.output.add(data);
-    await conn.output.allSent;
   }
 
   @override
@@ -120,9 +124,11 @@ class SerialManager extends State<SerialManagerMain> {
                           ],
                         ),
                         onPressed: () {
-                          String cont =
-                              "${devicesName[index]}\n${devicesAddress[index]}";
-                          ctAlert(context, cont);
+                          Map<String, String> deviceInfo = {
+                            "name": devicesName[index].toString(),
+                            "address": devicesAddress[index].toString(),
+                          };
+                          btConnect(deviceInfo, context);
                         },
                       ),
                     );
@@ -162,30 +168,12 @@ class SerialManager extends State<SerialManagerMain> {
   }
 }
 
-bool isListInItem(List l, var str) {
-  str = str.toString();
-  for (int i = 0; i < l.length; i++) {
-    var lstr = l[i].toString();
-    if (lstr == str) {
-      return true;
-    }
+class BLEcontrol {
+  ///// 연결된 장치로 데이터 전달 /////
+  static Future btSendData(BluetoothConnection conn, String data) async {
+    List<int> list = data.codeUnits;
+    Uint8List send = Uint8List.fromList(list);
+    conn.output.add(send);
+    await conn.output.allSent;
   }
-  return false;
-}
-
-void ctAlert(BuildContext context, String content) {
-  showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          content: Text(content),
-          actions: [
-            TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text("뒤로")),
-          ],
-        );
-      });
 }
