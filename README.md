@@ -1,3 +1,8 @@
+[2021/12/01]
+- 메인페이지(main.dart) 디자인 수정
+- 알람설정페이지(alarm_setting.dart) 디자인 수정
+
+<br>
 [2021/11/24]
 - alarmSetting 자잘한 버그 및 UI 수정
 - alarmSetting 시간 설정 inputCheck 추가
