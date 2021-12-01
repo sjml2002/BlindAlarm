@@ -77,50 +77,100 @@ class AlarmSetting extends StatelessWidget {
         appBar: AppBar(
           title: const Text("알람 설정"),
         ),
-        body: Row(
-          children: <Widget>[
-            Flexible(
-              child: TextField(
-                keyboardType: TextInputType.number,
-                controller: _yearControl,
-              ),
-            ),
-            const Text("년 "),
-            Flexible(
-              child: TextField(
-                keyboardType: TextInputType.number,
-                controller: _monthControl,
-              ),
-            ),
-            const Text("월 "),
-            Flexible(
-              child: TextField(
-                keyboardType: TextInputType.number,
-                controller: _dateControl,
-              ),
-            ),
-            const Text("일 "),
-            Flexible(
-              child: TextField(
-                keyboardType: TextInputType.number,
-                controller: _hourControl,
-              ),
-            ),
-            const Text("시 "),
-            Flexible(
-              child: TextField(
-                keyboardType: TextInputType.number,
-                controller: _minuteControl,
-              ),
-            ),
-            const Text("분 "),
-            //send TimeData
-            IconButton(
-                //sending button
-                icon: const Icon(Icons.send),
-                onPressed: () => {sendTimeData(context)}),
-          ],
-        ));
+        body: Padding(
+            padding: const EdgeInsets.all(80.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(children: <Widget>[
+                  Flexible(
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
+                      controller: _yearControl,
+                    ),
+                  ),
+                  const Text("년 "),
+                  const Padding(padding: EdgeInsets.only(right: 15)),
+                  Flexible(
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
+                      controller: _monthControl,
+                    ),
+                  ),
+                  const Text("월 "),
+                  const Padding(padding: EdgeInsets.only(right: 15)),
+                  Flexible(
+                    child: TextField(
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
+                      controller: _dateControl,
+                    ),
+                  ),
+                  const Text("일 "),
+                ]),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Flexible(
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number,
+                          controller: _hourControl,
+                        ),
+                      ),
+                      const Text("시 "),
+                      const Padding(padding: EdgeInsets.only(right: 25)),
+                      Flexible(
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number,
+                          controller: _minuteControl,
+                        ),
+                      ),
+                      const Text("분 "),
+                    ]),
+                //시간 입력과 버튼을 나누는 선
+                Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Container(height: 2.0, color: Colors.purpleAccent),
+                ),
+                Row(
+                  //send TimeData
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: SizedBox(
+                            width: 100,
+                            height: 50,
+                            child: TextButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.deepPurpleAccent.shade200),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                ),
+                              ),
+                              onPressed: () => {sendTimeData(context)},
+                              child: const Text(
+                                '알람설정',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                            ))),
+                  ],
+                )
+              ],
+            )));
   }
 }
 
@@ -186,7 +236,23 @@ class AlarmDataDTO {
   }
 
   String getTime() {
-    String returnStr = "$year/$month/$date, $hour:$minute";
+    String strM = "$month";
+    String strD = "$date";
+    String strH = "$hour";
+    String strMin = "$minute";
+    if (month! < 10) {
+      strM = "0$month";
+    }
+    if (date! < 10) {
+      strD = "0$date";
+    }
+    if (hour! < 10) {
+      strH = "0$hour";
+    }
+    if (minute! < 10) {
+      strMin = "0$minute";
+    }
+    String returnStr = "$year/$strM/$strD, $strH:$strMin";
     log(returnStr + "알람설정");
     return returnStr;
   }
