@@ -105,21 +105,53 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  padding: const EdgeInsets.only(bottom: 15),
-                  child: Text("알람: $timeData"),
+                  padding: const EdgeInsets.only(bottom: 5),
+                  child: const Text(
+                    "[알람이 울립니다]",
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                  ),
                 ),
                 Container(
-                    padding: const EdgeInsets.only(bottom: 5),
-                    child: TextButton(
-                      style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.purple),
-                      ),
-                      onPressed: () {
-                        timeSetting(context);
-                      },
-                      child: const Text('알람설정'),
-                    )),
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Text(
+                    "$timeData",
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.purple,
+                    ),
+                  ),
+                ),
+                Container(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: SizedBox(
+                        width: 100,
+                        height: 50,
+                        child: TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Colors.deepPurpleAccent.shade200),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {
+                            timeSetting(context);
+                          },
+                          child: const Text(
+                            '알람설정',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white70,
+                            ),
+                          ),
+                        ))),
               ],
             ),
           ),
@@ -129,35 +161,83 @@ class _MyHomePageState extends State<MyHomePage> {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Container(
-                padding: const EdgeInsets.only(bottom: 15),
-                child: Text("블루투스 연결 정보: ${btConn["name"].toString()}"),
+                padding: const EdgeInsets.only(bottom: 5),
+                child: const Text("[블루투스 연결 정보]"),
               ),
               Container(
-                  //connect Btn
-                  padding: const EdgeInsets.only(bottom: 3),
-                  child: TextButton(
-                    style: ButtonStyle(
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.blue),
-                    ),
-                    onPressed: () {
-                      serialSetting();
-                    },
-                    child: const Text('블루투스 연결'),
-                  )),
-              Container(
-                  //disconnect Btn
-                  padding: const EdgeInsets.only(bottom: 3),
-                  child: TextButton(
-                    style: ButtonStyle(
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.red),
-                    ),
-                    onPressed: () {
-                      serialDisconnect();
-                    },
-                    child: const Text('블루투스 연결 해제'),
-                  ))
+                padding: const EdgeInsets.only(bottom: 15),
+                child: Text(
+                  "${btConn["name"]?.toString()}",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w900,
+                    color: Color(0xFF0097A7),
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      //connect Btn
+                      padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
+                      child: SizedBox(
+                          width: 80,
+                          height: 60,
+                          child: TextButton(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.blue.shade600),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                )),
+                            onPressed: () {
+                              serialSetting();
+                            },
+                            child: const Text(
+                              '블루투스\n   연결',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white70,
+                              ),
+                            ),
+                          ))),
+                  Container(
+                      //disconnect Btn
+                      padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
+                      child: SizedBox(
+                          width: 80,
+                          height: 60,
+                          child: TextButton(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.red.shade600),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                )),
+                            onPressed: () {
+                              serialDisconnect();
+                            },
+                            child: const Text(
+                              '블루투스\n연결 해제',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white70,
+                              ),
+                            ),
+                          )))
+                ],
+              ),
             ]),
           )
         ]),
