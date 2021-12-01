@@ -65,7 +65,7 @@ class SerialManager extends State<SerialManagerMain> {
     log("devices: ${devicesAddress.toString()}"); //DEBUG
     log("results: ${results.toString()}");
     streamSubscription.onDone(() {
-      //FlutterBluetoothSerial.instance.cancelDiscovery();
+      FlutterBluetoothSerial.instance.cancelDiscovery();
     });
   }
 
@@ -104,7 +104,6 @@ class SerialManager extends State<SerialManagerMain> {
             child: const Text("블루투스 장치 재 검색"),
             onPressed: managerMain,
           ),
-
           const Text(" "),
           const Text("devicesName"),
           Expanded(
@@ -133,35 +132,6 @@ class SerialManager extends State<SerialManagerMain> {
                       ),
                     );
                   })),
-          //   ListView.builder(
-          //     itemCount: results.length,
-          //     itemBuilder: (BuildContext context, index) {
-          //       BluetoothDiscoveryResult deviceList = results[index];
-          //       final device = deviceList.device;
-          //       final address = deviceList.rssi;
-          //       return Row(
-          //         children: <Widget>[
-          //           Text("device: $device"),
-          //           Text("address: $address"),
-          //         ],
-          //       );
-          //     },
-          //   ),
-          //   Expanded(
-          //       child: Row(children: [
-          //     Container(
-          //         padding: const EdgeInsets.only(bottom: 8),
-          //         child: TextButton(
-          //           style: ButtonStyle(
-          //             foregroundColor:
-          //                 MaterialStateProperty.all<Color>(Colors.blue),
-          //           ),
-          //           onPressed: () {
-          //             startDiscovery();
-          //           },
-          //           child: const Text('블루투스 장치 다시 검색'),
-          //         )),
-          //   ])),
         ],
       ),
     );
