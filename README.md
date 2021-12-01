@@ -4,6 +4,7 @@
 
 <br>
 [2021/11/24]
+
 - alarmSetting 자잘한 버그 및 UI 수정
 - alarmSetting 시간 설정 inputCheck 추가
 - bluetooth Connect && Disconnect 구현
